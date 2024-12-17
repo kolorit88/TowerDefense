@@ -5,4 +5,6 @@ module org.example.towerdefense {
 
     opens org.example.towerdefense to javafx.fxml;
     exports org.example.towerdefense;
+    exports org.example.towerdefense.Controllers;
+    opens org.example.towerdefense.Controllers to javafx.fxml;
 }
