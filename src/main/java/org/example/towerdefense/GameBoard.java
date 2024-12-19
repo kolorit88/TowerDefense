@@ -3,12 +3,9 @@ package org.example.towerdefense;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-import java.security.cert.PolicyNode;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class GameBoard {
