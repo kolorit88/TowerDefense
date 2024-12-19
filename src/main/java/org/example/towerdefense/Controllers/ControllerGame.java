@@ -8,8 +8,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Game;
 import org.example.towerdefense.GameBoard;
-import org.example.towerdefense.LauncherThread;
-import org.example.towerdefense.Units.Enemies.Enemy;
 import org.example.towerdefense.Units.Enemies.OrdinaryEnemy;
 import org.example.towerdefense.Units.Level;
 
@@ -36,11 +34,10 @@ public class ControllerGame {
                                         68,
                                         78,
                     88, 87, 86, 85, 84, 83,
-                    93), List.of(new OrdinaryEnemy(100)));
+                    93), List.of(new OrdinaryEnemy(100), new OrdinaryEnemy(100)));
         GameBoard gameBoard = new GameBoard(mainPane, 5, Color.BISQUE, Color.BLACK, level1);
         Game game = new Game(gameBoard, mainPane, level1, 60);
         game.start();
-
 
 
         assert mainPane != null : "fx:id=\"mainPane\" was not injected: check your FXML file 'gameUI.fxml'.";

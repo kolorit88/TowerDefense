@@ -21,10 +21,15 @@ public class Game {
         mainThread = new LauncherThread(updateFrequency, new Runnable() {
             @Override
             public void run() {
+                updateTimer(1);
                 updateEnemy(1);
                 gameBoard.updateBoard();
             }
         });
+    }
+
+    private void updateTimer(double seconds) {
+        timer += seconds;
     }
 
     private void updateEnemy(int seconds){
@@ -35,6 +40,10 @@ public class Game {
             }
             timer = 0;
         }
+    }
+
+    private void updateTowers(){
+
     }
 
     public void start(){

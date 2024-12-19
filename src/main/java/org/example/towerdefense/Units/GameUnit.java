@@ -19,6 +19,8 @@ public class GameUnit {
 
     }
 
+    public void takeDamage(double damage) {}
+
 
 
 }
