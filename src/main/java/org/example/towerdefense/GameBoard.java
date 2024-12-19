@@ -4,6 +4,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import org.example.towerdefense.Units.Enemies.Enemy;
+import org.example.towerdefense.Units.Level;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +13,14 @@ import java.util.List;
 public class GameBoard {
     public AnchorPane gameBoardPane;
     public List<Polygon> polygonsList = new ArrayList<Polygon>();
+    public List<Polygon> pathPolygonsList = new ArrayList<Polygon>();
     public double height;
     public double width;
     public Color backGroundColor;
     public Color borderColor;
     public double x;
     public double y;
+    public Level level;
 
     private double polygonSize;
     private double borderSizeProp;
@@ -25,7 +29,7 @@ public class GameBoard {
 
 
 
-    public GameBoard(AnchorPane bordPane, double borderSize, Color backGroundColor, Color borderColor) {
+    public GameBoard(AnchorPane bordPane, double borderSize, Color backGroundColor, Color borderColor, Level level) {
         this.gameBoardPane = bordPane;
         this.height = getPaneHeight();
         this.width = getPaneWidth();
@@ -34,6 +38,7 @@ public class GameBoard {
         this.polygonSize = (this.width - this.borderSize * 10) / 10;
         this.backGroundColor = backGroundColor;
         this.borderColor = borderColor;
+        this.level = level;
 
         this.canvas = new Canvas(getPaneWidth(), getPaneHeight());
         gameBoardPane.getChildren().add(canvas);
@@ -42,6 +47,11 @@ public class GameBoard {
             polygonsList.add(new Polygon(i, polygonSize, canvas, gameBoardPane, this.backGroundColor));
         }
 
+        for(Integer num: level.getPathNumbersList()){
+            Polygon polygon = polygonsList.get(num);
+            polygon.setColor(Color.PALEGREEN);
+            level.addToPathPolygonList(polygon);
+        }
     }
 
     public void updateBoard(){ // запускать в игровом потоке
@@ -90,6 +100,7 @@ public class GameBoard {
         this.polygonSize = (this.width - this.borderSize * 10) / 10;
     }
 
+
     private void updateCoordinatesXY(){
         this.x = (getPaneWidth() - width) / 2;
         this.y = (getPaneHeight() - height) / 2;
@@ -118,5 +129,7 @@ public class GameBoard {
         return sidesSizes.stream().max(Double::compare).get();
     }
 
-
+    public void setLevel(Level level) {
+        this.level = level;
+    }
 }
