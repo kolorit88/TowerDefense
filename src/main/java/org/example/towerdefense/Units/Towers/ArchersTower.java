@@ -5,6 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Polygon;
 import org.example.towerdefense.Units.Enemies.Enemy;
+import org.example.towerdefense.Units.Timer;
 
 import java.awt.*;
 import java.lang.reflect.Array;
@@ -35,14 +36,41 @@ public class ArchersTower extends Tower{
         gc.fillPolygon(new double[] {x + size*0.5, x + size * 0.9, x + size*0.1}, new double[] {y + size*0.1, y + size * 0.8, y + size *0.8}, 3);
     }
 
-    public void attackPolygons() {
-        for(Polygon polygon: attackingPolygonsList){
-            if(polygon.unit != null){
-                if(polygon.unit.getClass() == Enemy.class){
-                    polygon.unit.takeDamage(this.damage);
+    public void findTarget(){
+        if(target == null){
+            for (Polygon polygon : attackingPolygonsList) {
+                if(polygon.unit != null){
+                    if(polygon.unit.getClassName().equals("enemy")){
+                        target = (Enemy) polygon.unit;
+                    }
                 }
             }
         }
     }
 
+    @Override
+    public void attack() {
+        if(target != null){
+            target.takeDamage(damage);
+            if(target.hp <= 0){
+                target = null;
+            }
+        }
+    }
+
+    @Override
+    public void action(double fps) {
+        if(timer == null){
+            timer = new Timer(1, new Runnable() {
+                public void run() {
+                    attack();
+                }
+            }, fps);
+        }
+
+        findTarget();
+        timer.countingDown();
+
+
+    }
 }

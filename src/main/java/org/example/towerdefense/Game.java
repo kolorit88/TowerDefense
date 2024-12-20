@@ -4,6 +4,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Units.Enemies.Enemy;
 import org.example.towerdefense.Units.Level;
+import org.example.towerdefense.Units.Towers.Tower;
 
 public class Game {
     private AnchorPane mainPane;
@@ -11,7 +12,6 @@ public class Game {
     private LauncherThread mainThread;
     public Level level;
     public double updateFrequency;
-    int timer = 0;
 
     public Game(GameBoard board, AnchorPane mainPane, Level level, double updateFrequency) {
         this.updateFrequency = updateFrequency;
@@ -21,29 +21,26 @@ public class Game {
         mainThread = new LauncherThread(updateFrequency, new Runnable() {
             @Override
             public void run() {
-                updateTimer(1);
-                updateEnemy(1);
                 gameBoard.updateBoard();
             }
         });
     }
 
-    private void updateTimer(double seconds) {
-        timer += seconds;
+    private void updateUnits(int seconds){
+        actionEnemies();
+        actionTowers();
     }
 
-    private void updateEnemy(int seconds){
-        timer += 1;
-        if (timer == seconds * updateFrequency) {
-            for(Enemy enemy: level.getEnemyList()){
-                enemy.moveOnOnePolygon();
-            }
-            timer = 0;
+    private void actionTowers(){
+        for(Tower tower: gameBoard.getTowersList()){
+            tower.attack();
         }
     }
 
-    private void updateTowers(){
-
+    private void actionEnemies(){
+        for(Enemy enemy: level.getEnemyList()){
+            enemy.moveOnOnePolygon();
+        }
     }
 
     public void start(){

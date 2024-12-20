@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a43f99-4384-4bab-8f74-57509c0c0c75" name="Changes" comment="com from pc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Timer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

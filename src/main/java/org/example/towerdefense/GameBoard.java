@@ -6,6 +6,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Units.Enemies.Enemy;
 import org.example.towerdefense.Units.Level;
+import org.example.towerdefense.Units.Towers.ArchersTower;
+import org.example.towerdefense.Units.Towers.Tower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class GameBoard {
     public AnchorPane gameBoardPane;
     public List<Polygon> polygonsList = new ArrayList<Polygon>();
     public List<Polygon> pathPolygonsList = new ArrayList<Polygon>();
+    public List<Tower> towersList = new ArrayList<>();
     public double height;
     public double width;
     public Color backGroundColor;
@@ -45,6 +48,9 @@ public class GameBoard {
 
         for(int i = 0; i <= 99; i++){
             polygonsList.add(new Polygon(i, polygonSize, canvas, gameBoardPane, this.backGroundColor));
+            if(i == 25){
+                ArchersTower testTower = new ArchersTower(100)
+            }
         }
 
         for(Integer num: level.getPathNumbersList()){
@@ -131,5 +137,9 @@ public class GameBoard {
 
     public void setLevel(Level level) {
         this.level = level;
+    }
+
+    public List<Tower> getTowersList() {
+        return towersList;
     }
 }

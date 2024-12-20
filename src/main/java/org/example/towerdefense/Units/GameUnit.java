@@ -20,6 +20,9 @@ public class GameUnit {
     }
 
     public void takeDamage(double damage) {}
+    public String getClassName(){
+        return "gameUnit";
+    }
 
 
 

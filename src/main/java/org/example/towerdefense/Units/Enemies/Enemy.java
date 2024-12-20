@@ -42,4 +42,9 @@ public class Enemy extends GameUnit {
         this.pathPolygonsList = pathPolygonsList;
     }
 
+    @Override
+    public String getClassName(){
+        return "enemy";
+    }
+
 }
