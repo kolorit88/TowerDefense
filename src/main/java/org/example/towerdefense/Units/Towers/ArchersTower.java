@@ -5,15 +5,15 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Polygon;
 import org.example.towerdefense.Units.Enemies.Enemy;
-import org.example.towerdefense.Units.Timer;
+import org.example.towerdefense.Timer;
 
-import java.awt.*;
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ArchersTower extends Tower{
 
     public ArchersTower(double damage, double attackSpeed) {
         super(damage, attackSpeed);
+        attackingPolygonsList = new ArrayList<>();
     }
 
     @Override
@@ -37,6 +37,17 @@ public class ArchersTower extends Tower{
     }
 
     public void findTarget(){
+        if(target != null){
+            boolean targetLost = true;
+            for(Polygon polygon: attackingPolygonsList){
+                if(polygon.unit == target){
+                    targetLost = false;
+                }
+            }
+            if(targetLost){
+                target = null;
+            }
+        }
         if(target == null){
             for (Polygon polygon : attackingPolygonsList) {
                 if(polygon.unit != null){
@@ -61,7 +72,7 @@ public class ArchersTower extends Tower{
     @Override
     public void action(double fps) {
         if(timer == null){
-            timer = new Timer(1, new Runnable() {
+            timer = new Timer(attackSpeed, new Runnable() {
                 public void run() {
                     attack();
                 }
@@ -70,7 +81,6 @@ public class ArchersTower extends Tower{
 
         findTarget();
         timer.countingDown();
-
 
     }
 }

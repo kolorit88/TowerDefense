@@ -4,8 +4,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import org.example.towerdefense.Units.Enemies.Enemy;
-import org.example.towerdefense.Units.Level;
 import org.example.towerdefense.Units.Towers.ArchersTower;
 import org.example.towerdefense.Units.Towers.Tower;
 
@@ -48,9 +46,6 @@ public class GameBoard {
 
         for(int i = 0; i <= 99; i++){
             polygonsList.add(new Polygon(i, polygonSize, canvas, gameBoardPane, this.backGroundColor));
-            if(i == 25){
-                ArchersTower testTower = new ArchersTower(100)
-            }
         }
 
         for(Integer num: level.getPathNumbersList()){
@@ -58,6 +53,12 @@ public class GameBoard {
             polygon.setColor(Color.PALEGREEN);
             level.addToPathPolygonList(polygon);
         }
+
+        ArchersTower testTower = new ArchersTower(10, 0.5);
+        testTower.setPathPolygonList(level.pathPolygonList);
+        testTower.placeThisOnPolygon(polygonsList.get(25));
+        towersList.add(testTower);
+
     }
 
     public void updateBoard(){ // запускать в игровом потоке

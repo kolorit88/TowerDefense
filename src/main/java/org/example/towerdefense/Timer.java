@@ -1,4 +1,4 @@
-package org.example.towerdefense.Units;
+package org.example.towerdefense;
 
 public class Timer {
     double timerCount = 0;

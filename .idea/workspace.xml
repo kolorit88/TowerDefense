@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a43f99-4384-4bab-8f74-57509c0c0c75" name="Changes" comment="com from pc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Timer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Timer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" afterDir="false" />
     </list>
@@ -76,6 +79,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.towerdefense" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.towerdefense.App" />
@@ -115,6 +123,7 @@
       <workItem from="1734439383805" duration="14443000" />
       <workItem from="1734498273894" duration="2736000" />
       <workItem from="1734617103134" duration="12826000" />
+      <workItem from="1734677181879" duration="4577000" />
     </task>
     <task id="LOCAL-00001" summary="com from pc">
       <option name="closed" value="true" />

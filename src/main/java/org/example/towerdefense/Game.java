@@ -1,9 +1,7 @@
 package org.example.towerdefense;
 
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import org.example.towerdefense.Units.Enemies.Enemy;
-import org.example.towerdefense.Units.Level;
 import org.example.towerdefense.Units.Towers.Tower;
 
 public class Game {
@@ -21,25 +19,26 @@ public class Game {
         mainThread = new LauncherThread(updateFrequency, new Runnable() {
             @Override
             public void run() {
+                updateUnits();
                 gameBoard.updateBoard();
             }
         });
     }
 
-    private void updateUnits(int seconds){
-        actionEnemies();
+    private void updateUnits(){
         actionTowers();
+        actionEnemies();
     }
 
     private void actionTowers(){
         for(Tower tower: gameBoard.getTowersList()){
-            tower.attack();
+            tower.action(updateFrequency);
         }
     }
 
     private void actionEnemies(){
         for(Enemy enemy: level.getEnemyList()){
-            enemy.moveOnOnePolygon();
+            enemy.action(updateFrequency);
         }
     }
 
