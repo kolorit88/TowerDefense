@@ -1,9 +1,11 @@
-package org.example.towerdefense.Controllers;
+package org.example.towerdefense;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,7 +16,6 @@ public class ControllerMenu {
     public void transferStage(Stage stage){
         this.stage = stage;
     }
-
 
     @FXML
     private ResourceBundle resources;
@@ -32,13 +33,13 @@ public class ControllerMenu {
     private Button joinGameButton;
 
     @FXML
-    void createGame(ActionEvent event) {
-
+    void createGame(ActionEvent event) throws Exception {
+        loadGame(true, stage);
     }
 
     @FXML
-    void joinGame(ActionEvent event) {
-
+    void joinGame(ActionEvent event) throws Exception {
+        loadGame(false, stage);
     }
 
     @FXML
@@ -48,4 +49,16 @@ public class ControllerMenu {
         assert joinGameButton != null : "fx:id=\"joinGameButton\" was not injected: check your FXML file 'menuUI.fxml'.";
 
     }
+
+    private void loadGame(boolean isServer, Stage stage) throws Exception {
+        FXMLLoader gameLoad = new FXMLLoader(getClass().getResource("gameUI.fxml"));
+        Scene gameScene = new Scene(gameLoad.load());
+        stage.setScene(gameScene);
+
+        ControllerGamePlay controller = gameLoad.getController();
+        controller.transferStage(stage);
+        controller.startGameOnline(isServer, ipLabel.getText());
+        stage.setResizable(true);
+    }
+
 }

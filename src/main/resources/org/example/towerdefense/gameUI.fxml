@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.towerdefense.Controllers.ControllerGame" />
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.towerdefense.ControllerGamePlay">
+   <children>
+      <Button fx:id="byeArcherTowerButton" layoutX="152.0" layoutY="77.0" mnemonicParsing="false" onAction="#byeArcherTowerAction" prefHeight="25.0" prefWidth="82.0" text="bye:150" />
+      <Button fx:id="byeBombTowerButton" layoutX="345.0" layoutY="77.0" mnemonicParsing="false" onAction="#byeBombTowerAction" prefHeight="25.0" prefWidth="82.0" text="bye:250" />
+      <Button fx:id="startButton" layoutX="247.0" layoutY="561.0" mnemonicParsing="false" onAction="#startButtonAction" prefHeight="25.0" prefWidth="82.0" text="start" />
+      <Text fx:id="coinsText" layoutX="48.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="56.13671875" />
+      <Button fx:id="farmCoinsButton" layoutX="261.0" layoutY="44.0" mnemonicParsing="false" onAction="#farmCoinsAction" prefHeight="25.0" prefWidth="64.0" text="+1 coin" />
+   </children>
+</AnchorPane>

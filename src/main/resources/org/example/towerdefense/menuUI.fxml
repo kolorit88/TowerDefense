@@ -6,9 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="650.0" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.towerdefense.Controllers.ControllerMenu">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="650.0" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.towerdefense.ControllerMenu">
    <children>
-      <Button fx:id="joinGameButton" layoutX="224.0" layoutY="279.0" mnemonicParsing="false" onAction="#joinGame" prefHeight="45.0" prefWidth="203.0" text="Join the game">
+      <Button fx:id="joinGameButton" layoutX="224.0" layoutY="289.0" mnemonicParsing="false" onAction="#joinGame" prefHeight="45.0" prefWidth="203.0" text="Join the game">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
@@ -23,6 +23,6 @@
             <Font size="33.0" />
          </font>
       </Text>
-      <TextField fx:id="ipLabel" layoutX="250.0" layoutY="336.0" prefHeight="25.0" prefWidth="151.0" promptText="ip" text="localhost" />
+      <TextField fx:id="ipLabel" layoutX="248.0" layoutY="370.0" prefHeight="25.0" prefWidth="154.0" promptText="ip" text="localhost:7777" />
    </children>
 </AnchorPane>

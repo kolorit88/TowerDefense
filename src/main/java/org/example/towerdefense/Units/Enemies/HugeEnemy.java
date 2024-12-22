@@ -4,19 +4,19 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import org.example.towerdefense.Timer;
-import org.example.towerdefense.Units.Castle;
 
 import java.util.HashMap;
 
-public class OrdinaryEnemy extends Enemy{
-    public OrdinaryEnemy(double hp) {
+public class HugeEnemy extends OrdinaryEnemy{
+
+    public HugeEnemy(double hp) {
         super(hp);
     }
 
     @Override
     public void action(double fps){
         if(timer == null){
-            this.timer = new Timer(1, new Runnable() {
+            this.timer = new Timer(2, new Runnable() {
                 @Override
                 public void run() {
                     moveOnOnePolygon();
@@ -29,7 +29,7 @@ public class OrdinaryEnemy extends Enemy{
     @Override
     public void draw(double x, double y, double size, Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(Color.BLUEVIOLET);
+        gc.setFill(Color.DARKVIOLET);
         gc.fillOval(x, y, size, size);
 
         gc.setFill(Color.RED);
@@ -40,7 +40,7 @@ public class OrdinaryEnemy extends Enemy{
 
     @Override
     public String getClassName(){
-        return "ordinary enemy";
+        return "huge enemy";
     }
     @Override
     public HashMap<String, Object> toHashMap(){

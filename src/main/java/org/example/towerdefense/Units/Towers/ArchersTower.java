@@ -8,12 +8,16 @@ import org.example.towerdefense.Units.Enemies.Enemy;
 import org.example.towerdefense.Timer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ArchersTower extends Tower{
 
-    public ArchersTower(double damage, double attackSpeed) {
-        super(damage, attackSpeed);
+    public ArchersTower(double damage, double attackSpeed, double cost) {
+        super(damage, attackSpeed, cost);
         attackingPolygonsList = new ArrayList<>();
+    }
+    public ArchersTower(HashMap<String, Object> data){
+        super(data);
     }
 
     @Override
@@ -81,6 +85,10 @@ public class ArchersTower extends Tower{
 
         findTarget();
         timer.countingDown();
+    }
 
+    @Override
+    public String getClassName(){
+        return "archers tower";
     }
 }

@@ -2,6 +2,7 @@ package org.example.towerdefense.Units;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import org.example.towerdefense.GameBoard;
 import org.example.towerdefense.Polygon;
 
@@ -15,6 +16,7 @@ public class GameUnit {
 
     public void removeThisFromPolygon(Polygon polygon) {
         polygon.removeUnit();
+        polygon.setColor(Color.PALEGREEN);
     }
 
     public void draw(double x, double y, double size, Canvas canvas){
@@ -34,5 +36,7 @@ public class GameUnit {
     }
 
 
-
+    public double getCost() {
+        return 0;
+    }
 }
