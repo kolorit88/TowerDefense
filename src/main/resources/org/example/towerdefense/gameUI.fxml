@@ -11,5 +11,6 @@
       <Button fx:id="startButton" layoutX="247.0" layoutY="561.0" mnemonicParsing="false" onAction="#startButtonAction" prefHeight="25.0" prefWidth="82.0" text="start" />
       <Text fx:id="coinsText" layoutX="48.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="56.13671875" />
       <Button fx:id="farmCoinsButton" layoutX="261.0" layoutY="44.0" mnemonicParsing="false" onAction="#farmCoinsAction" prefHeight="25.0" prefWidth="64.0" text="+1 coin" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="25.0" prefWidth="38.0" text="&lt;--" />
    </children>
 </AnchorPane>

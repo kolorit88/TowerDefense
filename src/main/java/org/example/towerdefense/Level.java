@@ -15,7 +15,7 @@ public class Level {
     public List<Polygon> pathPolygonList;
     private List<List<Enemy>> wavesList = new ArrayList<>();
     private List<Enemy> enemyList;
-    private int waveNumber = 0;
+    public int waveNumber = 0;
     public int coinsQuantity = 0;
     private List<List<Double>> wavesTimeIntervalsBetweenEnemies;
     public List<Double> timeIntervals;
@@ -76,12 +76,14 @@ public class Level {
         }
     }
 
-    public void nextWave(){
+    public String nextWave(){
         if(wavesList.size() > waveNumber){
             enemyList = wavesList.get(waveNumber);
             timeIntervals = new ArrayList<>(wavesTimeIntervalsBetweenEnemies.get(waveNumber));
             waveNumber++;
+            return "next";
         }
+        return "endGame";
 
     }
 

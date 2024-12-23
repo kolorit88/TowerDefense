@@ -32,8 +32,7 @@ public class Client extends Connection{
                 break;
             }
             catch (ConnectException | RuntimeException e) {
-                System.out.println("Указанный сервер не найден");
-                return "error";
+
             }
         }
 
@@ -52,19 +51,24 @@ public class Client extends Connection{
 
         game.setLevel(new Level(settings.data));
 
-        System.out.println("я получил настройки" + settings);
-
         out.writeObject("клиент принял настройки" + settings);
         out.flush();
+
+        game.gameBoard.startButton.setVisible(false);
+        game.start();
         System.out.println("finish init settings");
     }
 
     @Override
     public void close(){
         try {
-            if(mainThread != null && inputThread != null && outputThread != null) {
+            if(mainThread != null) {
                 mainThread.interrupt();
+            }
+            if(inputThread != null) {
                 inputThread.interrupt();
+            };
+            if (outputThread != null){
                 outputThread.interrupt();
             }
 

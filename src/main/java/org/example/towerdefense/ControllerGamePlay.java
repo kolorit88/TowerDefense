@@ -45,6 +45,9 @@ public class ControllerGamePlay {
     private Button farmCoinsButton;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private Text coinsText;
 
     private Stage stage;
@@ -55,6 +58,8 @@ public class ControllerGamePlay {
 
     @FXML
     void initialize() {
+        startButton.setVisible(true);
+        farmCoinsButton.setVisible(false);
         assert mainPane != null : "fx:id=\"mainPane\" was not injected: check your FXML file 'gameUI.fxml'.";
     }
 
@@ -95,14 +100,14 @@ public class ControllerGamePlay {
                             List.of(new FastEnemy(50), new FastEnemy(50), new FastEnemy(50), new FastEnemy(50), new FastEnemy(50), new FastEnemy(50)),
                             List.of(new HugeEnemy(700), new HugeEnemy(700))),
                     List.of(List.of(1.0, 2.0, 2.0), List.of(0.5, 0.5, 0.5, 0.5, 0.5), List.of(3.0, 6.0)));
-            GameBoard gameBoard = new GameBoard(mainPane, 5, Color.BISQUE, Color.BLACK, level, byeArcherTowerButton, byeBombTowerButton, startButton, farmCoinsButton, coinsText);
+            GameBoard gameBoard = new GameBoard(mainPane, 5, Color.BISQUE, Color.BLACK, level, byeArcherTowerButton, byeBombTowerButton, startButton, farmCoinsButton, backButton, coinsText);
             this.game = new Game(gameBoard, mainPane, level, castle, 60);
-            game.start();
 
             if(isServer){
                 Server server = new Server(game, port, 60);
                 game.setConnection(server);
                 server.start();
+                game.start();
             }
             else {
                 Client client = new Client(game, ip, port,60);
@@ -136,13 +141,19 @@ public class ControllerGamePlay {
     @FXML
     void startButtonAction(ActionEvent event) {
         game.startWaves();
-        startButton.setVisible(false);
-        farmCoinsButton.setVisible(true);
     }
 
     @FXML
     void farmCoinsAction(ActionEvent event) {
         game.plusOneCoin();
+    }
+
+    @FXML
+    void backButtonAction() throws Exception {
+        if(game != null){
+            game.endGame();
+            loadMenu(stage);
+        }
     }
 
     public void loadMenu(Stage stage) throws Exception {

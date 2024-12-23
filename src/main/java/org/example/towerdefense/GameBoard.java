@@ -33,6 +33,7 @@ public class GameBoard {
     public Button byeBombButton;
     public Button startButton;
     public Button farmCoinsButton;
+    public Button backButton;
 
     public Text coinsText;
 
@@ -43,7 +44,8 @@ public class GameBoard {
 
 
 
-    public GameBoard(AnchorPane bordPane, double borderSize, Color backGroundColor, Color borderColor, Level level, Button byeArcherButton, Button byeBombButton, Button startButton, Button farmCoinsButton, Text coinsText) {
+    public GameBoard(AnchorPane bordPane, double borderSize, Color backGroundColor, Color borderColor, Level level, Button byeArcherButton, Button byeBombButton, Button startButton, Button farmCoinsButton, Button backButton, Text coinsText) {
+        this.backButton = backButton;
         this.farmCoinsButton = farmCoinsButton;
         this.coinsText = coinsText;
         this.byeArcherButton = byeArcherButton;
@@ -169,6 +171,9 @@ public class GameBoard {
 
         startButton.setPrefSize(width * 0.2, height * 0.05);
         startButton.relocate(x + (width / 5) * 2, y + height*1.03);
+
+//        backButton.setPrefSize(width * 0.2, height * 0.05);
+//        backButton.relocate(50, 50);
     }
 
     private double getPaneWidth(){

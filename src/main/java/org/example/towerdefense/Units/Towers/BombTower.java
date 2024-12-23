@@ -18,6 +18,7 @@ public class BombTower extends Tower {
 
     public BombTower(HashMap<String, Object> data){
         super(data);
+        attackingPolygonsList = new ArrayList<>();
     }
 
     @Override
@@ -33,7 +34,7 @@ public class BombTower extends Tower {
     public void attack() {
         for(Polygon polygon:attackingPolygonsList){
             if(polygon.unit != null){
-                if(polygon.unit.getClassName().equals("enemy")){
+                if(polygon.unit.getClassName().contains("enemy")){
                     polygon.unit.takeDamage(damage);
                 }
             }

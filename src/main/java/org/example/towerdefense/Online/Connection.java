@@ -80,10 +80,18 @@ public class Connection {
                 game.gameBoard.towersList.add(tower);
             }
 
+            else if(update.message.equals("remove tower")){
+                game.gameBoard.towersList.remove(game.gameBoard.polygonsList.get((int) data.get("polygonId")).unit);
+                game.gameBoard.polygonsList.get((int) data.get("polygonId")).unit = null;
+            }
+
             else if (update.message.equals("change coins")) {
                 game.level.coinsQuantity += (Integer) data.get("coins");
             }
 
+            else if (update.message.equals("start waves")) {
+                game.startWaves();
+            }
         }
     }
 
@@ -120,7 +128,6 @@ public class Connection {
             @Override
             public void run() {
                 if(!mainThreadStarted){
-                    System.out.println("Основной поток запущен!");
                     try {
                         if(createConnection().equals("ok")){
                             createOutputThread();
@@ -138,7 +145,6 @@ public class Connection {
                 update();
             }
         });
-
         mainThread.start();
     }
 

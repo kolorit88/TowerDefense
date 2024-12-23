@@ -5,32 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a43f99-4384-4bab-8f74-57509c0c0c75" name="Changes" comment="com from pc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/ControllerGamePlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/LoopedThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Castle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/FastEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/HugeEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/BombTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Controllers/ControllerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/ControllerMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/ControllerGamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/ControllerGamePlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Enemies/OrdinaryEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/GameUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Online/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/ArchersTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/BombTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerdefense/Units/Towers/BombTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/towerdefense/gameUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/towerdefense/gameUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/towerdefense/menuUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/towerdefense/menuUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +126,8 @@
       <workItem from="1734677181879" duration="4577000" />
       <workItem from="1734790803743" duration="7516000" />
       <workItem from="1734798494815" duration="7456000" />
-      <workItem from="1734850169239" duration="19162000" />
+      <workItem from="1734850169239" duration="24756000" />
+      <workItem from="1734969305591" duration="2472000" />
     </task>
     <task id="LOCAL-00001" summary="com from pc">
       <option name="closed" value="true" />
@@ -167,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734626090854</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="com from pc">
+      <option name="closed" value="true" />
+      <created>1734870680479</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734870680479</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

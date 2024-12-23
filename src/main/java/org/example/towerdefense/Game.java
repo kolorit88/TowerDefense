@@ -61,8 +61,11 @@ public class Game {
             }
         }
         if(needNextWave){
-            level.nextWave();
+            if(level.nextWave().equals("endGame")){
+                endGame();
+            };
         }
+
     }
 
     private void checkIfCastleDead(){
@@ -76,6 +79,7 @@ public class Game {
             connection.close();
         }
         mainThread.interrupt();
+
     }
 
     private void placeEnemy(){
@@ -127,7 +131,7 @@ public class Game {
         if(pickedTower == null){
             if(towerName.equals("archers")){
                 if(level.coinsQuantity >= 150){
-                    pickedTower = new ArchersTower(5, 0.3, 150);
+                    pickedTower = new ArchersTower(500, 0.3, 150);
                     level.coinsQuantity -= (int) pickedTower.getCost();
                     messageChangeCoins(-150);
                 }
@@ -161,11 +165,12 @@ public class Game {
             if(polygon != null){
                 if(polygon.unit != null){
                     if(polygon.unit.getClassName().contains("tower")){
+                        messageChangeCoins((int) (polygon.unit.getCost() * 0.8));
+                        messageRemoveTower(polygon.id);
+
                         level.coinsQuantity += (int) (polygon.unit.getCost() * 0.8);
                         gameBoard.towersList.remove(polygon.unit);
                         polygon.unit = null;
-
-                        messageChangeCoins((int) (polygon.unit.getCost() * 0.8));
                     }
                 }
             }
@@ -184,6 +189,18 @@ public class Game {
         updateQueue.add(new Message(data, "change coins"));
     }
 
+    public void messageRemoveTower(int polygonId){
+        HashMap<String, Object> data = new HashMap<String, Object>();
+        data.put("polygonId", polygonId);
+        updateQueue.add(new Message(data, "remove tower"));
+    }
+
+    public void messageStartWaves(){
+        HashMap<String, Object> data = new HashMap<String, Object>();
+        data.put("started", true);
+        updateQueue.add(new Message(data, "start waves"));
+    }
+
     public void plusOneCoin(){
         level.coinsQuantity += 1;
         messageChangeCoins(+1);
@@ -196,11 +213,15 @@ public class Game {
     }
 
     public void startWaves(){
+        messageStartWaves();
         startWaves = true;
+        gameBoard.startButton.setVisible(false);
+        gameBoard.farmCoinsButton.setVisible(true);
     }
 
     public void setLevel(Level level){
         this.level = level;
+        gameBoard.setLevel(level);
     }
 
     public BlockingQueue<Message> getUpdateQueue(){

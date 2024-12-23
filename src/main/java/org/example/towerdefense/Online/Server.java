@@ -61,9 +61,13 @@ public class Server extends Connection{
     @Override
     public void close(){
         try {
-            if(mainThread != null && inputThread != null && outputThread != null) {
+            if(mainThread != null) {
                 mainThread.interrupt();
+            }
+            if(inputThread != null) {
                 inputThread.interrupt();
+            };
+            if (outputThread != null){
                 outputThread.interrupt();
             }
 
