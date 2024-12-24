@@ -20,7 +20,7 @@ public class Server extends Connection{
     }
 
     @Override
-    public void start() throws IOException{ //ow
+    public void start() throws IOException{
         try{server = new ServerSocket(Integer.parseInt(port), 50, InetAddress.getByName("0.0.0.0"));}
         catch (BindException e){
             server = new ServerSocket(0, 50, InetAddress.getByName("0.0.0.0"));
@@ -48,12 +48,10 @@ public class Server extends Connection{
     protected void setStartGameSettings() throws IOException, ClassNotFoundException {
         Message startSettings = new Message(game.level.toHashMap(), "setLevel");
 
-        System.out.println("client:" + startSettings);
-
         out.writeObject(startSettings);
         out.flush();
 
-        System.out.println("Resp from client:" + (String) in.readObject());
+        System.out.println("Resp from client:");
         System.out.println("finish init settings");
     }
 

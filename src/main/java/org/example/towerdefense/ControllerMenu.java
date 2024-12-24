@@ -1,5 +1,6 @@
 package org.example.towerdefense;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -33,6 +34,9 @@ public class ControllerMenu {
     private Button joinGameButton;
 
     @FXML
+    private Button leadersButton;
+
+    @FXML
     void createGame(ActionEvent event) throws Exception {
         loadGame(true, stage);
     }
@@ -43,11 +47,24 @@ public class ControllerMenu {
     }
 
     @FXML
+    void leadersButtonAction(ActionEvent event) throws Exception {
+        loadLeaderboard();
+    }
+
+    @FXML
     void initialize() {
         assert createGameButton != null : "fx:id=\"createGameButton\" was not injected: check your FXML file 'menuUI.fxml'.";
         assert ipLabel != null : "fx:id=\"ipLabel\" was not injected: check your FXML file 'menuUI.fxml'.";
         assert joinGameButton != null : "fx:id=\"joinGameButton\" was not injected: check your FXML file 'menuUI.fxml'.";
 
+    }
+
+    private void loadLeaderboard() throws IOException {
+        FXMLLoader leaderboardLoad = new FXMLLoader(getClass().getResource("leaderboardUI.fxml"));
+        Scene leaderboardLoadScene = new Scene(leaderboardLoad.load());
+        ControllerLeaderboard leaderboardController = leaderboardLoad.getController();
+        leaderboardController.setStage(stage);
+        stage.setScene(leaderboardLoadScene);
     }
 
     private void loadGame(boolean isServer, Stage stage) throws Exception {

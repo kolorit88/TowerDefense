@@ -1,6 +1,7 @@
 package org.example.towerdefense;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import org.example.towerdefense.Online.Connection;
 import org.example.towerdefense.Units.Castle;
 import org.example.towerdefense.Units.Enemies.Enemy;
@@ -9,11 +10,15 @@ import org.example.towerdefense.Units.Towers.BombTower;
 import org.example.towerdefense.Units.Towers.Tower;
 
 import javax.crypto.MacSpi;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import static java.lang.Thread.sleep;
 
 public class Game {
     private AnchorPane mainPane;
@@ -79,8 +84,21 @@ public class Game {
             connection.close();
         }
         mainThread.interrupt();
+        Database db = new Database("jdbc:sqlite:src/main/resources/org/example/towerdefense/AppDatabase.db");
+
+        if(level.castle.lives <= 0){
+            paintAllBoard(Color.CRIMSON);
+            db.updatePlayer("You", 0, 1);
+        }
+        else{
+            paintWin(Color.PALEGREEN.darker());
+            db.updatePlayer("You", 1, 0);
+        }
+        gameBoard.updateBoard();
 
     }
+
+
 
     private void placeEnemy(){
         if(!level.getTimeIntervals().isEmpty()){
@@ -99,7 +117,6 @@ public class Game {
                     }
                 }, updateFrequency);
                 if(level.timeIntervals.size() > 1){
-                    System.out.println(level.timeIntervals);
                     level.timeIntervals.removeFirst();
                 }
             }
@@ -131,7 +148,7 @@ public class Game {
         if(pickedTower == null){
             if(towerName.equals("archers")){
                 if(level.coinsQuantity >= 150){
-                    pickedTower = new ArchersTower(500, 0.3, 150);
+                    pickedTower = new ArchersTower(5, 0.3, 150);
                     level.coinsQuantity -= (int) pickedTower.getCost();
                     messageChangeCoins(-150);
                 }
@@ -230,5 +247,42 @@ public class Game {
 
     public void setConnection(Connection connection) {
         this.connection = connection;
+    }
+    private void paintAllBoard(Color color){
+        for(Polygon polygon: gameBoard.polygonsList){
+            try {
+                polygon.setColor(color);
+                polygon.unit = null;
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    private void paintWin(Color color){
+        paintAllBoard(color.darker());
+        gameBoard.polygonsList.get(30).setColor(color);
+        gameBoard.polygonsList.get(40).setColor(color);
+        gameBoard.polygonsList.get(50).setColor(color);
+        gameBoard.polygonsList.get(61).setColor(color);
+        gameBoard.polygonsList.get(52).setColor(color);
+        gameBoard.polygonsList.get(42).setColor(color);
+        gameBoard.polygonsList.get(63).setColor(color);
+        gameBoard.polygonsList.get(54).setColor(color);
+        gameBoard.polygonsList.get(44).setColor(color);
+        gameBoard.polygonsList.get(34).setColor(color);
+
+        gameBoard.polygonsList.get(65).setColor(color);
+        gameBoard.polygonsList.get(55).setColor(color);
+        gameBoard.polygonsList.get(35).setColor(color);
+
+        gameBoard.polygonsList.get(67).setColor(color);
+        gameBoard.polygonsList.get(57).setColor(color);
+        gameBoard.polygonsList.get(47).setColor(color);
+        gameBoard.polygonsList.get(37).setColor(color);
+        gameBoard.polygonsList.get(38).setColor(color);
+        gameBoard.polygonsList.get(49).setColor(color);
+        gameBoard.polygonsList.get(59).setColor(color);
+        gameBoard.polygonsList.get(69).setColor(color);
     }
 }

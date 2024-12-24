@@ -32,6 +32,9 @@ public class Polygon {
         if(this.unit != null){
             unit.draw(x, y, size, canvas);
         }
+//        gc.setFont(javafx.scene.text.Font.font("Arial", 16));
+//        gc.setFill(Color.BLACK);
+//        gc.fillText(String.valueOf(id), x, y+size/2);
 
     }
 

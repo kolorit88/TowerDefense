@@ -24,5 +24,6 @@
          </font>
       </Text>
       <TextField fx:id="ipLabel" layoutX="248.0" layoutY="370.0" prefHeight="25.0" prefWidth="154.0" promptText="ip" text="localhost:7777" />
+      <Button fx:id="leadersButton" layoutX="287.0" layoutY="411.0" mnemonicParsing="false" onAction="#leadersButtonAction" prefHeight="25.0" prefWidth="61.0" text="Leaders" />
    </children>
 </AnchorPane>

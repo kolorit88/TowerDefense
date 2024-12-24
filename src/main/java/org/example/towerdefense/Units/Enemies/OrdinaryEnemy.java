@@ -16,7 +16,7 @@ public class OrdinaryEnemy extends Enemy{
     @Override
     public void action(double fps){
         if(timer == null){
-            this.timer = new Timer(1, new Runnable() {
+            this.timer = new Timer(0.1, new Runnable() {
                 @Override
                 public void run() {
                     moveOnOnePolygon();

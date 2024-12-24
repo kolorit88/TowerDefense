@@ -25,7 +25,7 @@ public class Client extends Connection{
     @Override
     protected String createConnection() throws IOException {
         System.out.println("Ожидаем подключение к серверу");
-
+        System.out.println(IpAddress + ":" + port);
         while (true){
             try {
                 clientSocket = new Socket(IpAddress, Integer.parseInt(port));

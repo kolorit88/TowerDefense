@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
-
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader menuLoader = new FXMLLoader(getClass().getResource("menuUI.fxml"));
@@ -25,6 +24,7 @@ public class App extends Application {
         stage.show();
 
     }
+
     public static void main(String[] args) {launch(args);}
 
 }

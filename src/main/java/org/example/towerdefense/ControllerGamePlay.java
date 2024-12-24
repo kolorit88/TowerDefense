@@ -151,7 +151,6 @@ public class ControllerGamePlay {
     @FXML
     void backButtonAction() throws Exception {
         if(game != null){
-            game.endGame();
             loadMenu(stage);
         }
     }
